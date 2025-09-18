@@ -1,8 +1,11 @@
+import LoginCard from "../components/LoginCard"
 
 function Login() {
+
+
   return (
-    <div>
-        
+    <div className="bg-light">
+        <LoginCard />
     </div>
   )
 }
