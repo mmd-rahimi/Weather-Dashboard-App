@@ -47,10 +47,11 @@ export default function LoginPage() {
       <Box
         sx={{
           width: {
-            xs: "90%",
+            xs: 280,
             sm: 420,
-            md: 600,
+            md: 700,
           },
+          height: {xs:400, sm:400},
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -59,18 +60,65 @@ export default function LoginPage() {
             sm: "row-reverse",
           },
           mb: 3,
+        borderRadius: 4,
+        // boxShadow:4, 
         }}
       >
         {/* login form hero */}
-        <Card sx={{ width: "40%" }}>svddd</Card>
+        <Card
+          className="second-light-color"
+          sx={{
+            bgcolor: "#D3E1E7",
+            width: "45%",
+            height: "100%",
+            display: { xs: "none", sm: "flex" },
+            justifyItems: "center",
+          }}
+        >
+          <CardContent
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              width: "100%",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "end",
+              }}
+            >
+              <img className="image" src="./public/top.png" />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "start",
+              }}
+            >
+              <img className="image" src="./public/mid.png" />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "end",
+              }}
+            >
+              <img className="image" src="./public/bottom.png" />
+            </Box>
+          </CardContent>
+        </Card>
 
         {/* login form */}
         <Card
           sx={{
-            width: "60%",
-            p: 3,
-            borderRadius: 2,
-            boxShadow: 3,
+            width: {xs: "100%", sm:"55%"},
+            height:"100%" ,
+             px: 4,
             bgcolor: "#fff",
           }}
         >
@@ -86,6 +134,7 @@ export default function LoginPage() {
             </Typography>
 
             <TextField
+            size="small"
               fullWidth
               margin="normal"
               label={texts[lang].placeholder}
@@ -104,7 +153,7 @@ export default function LoginPage() {
       <FormControl
         variant="standard"
         sx={{
-          width: 120,
+          width: 200,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -112,6 +161,7 @@ export default function LoginPage() {
       >
         <InputLabel id="demo-simple-select-standard-label">Language</InputLabel>
         <Select
+        sx={{width: "100%"}}
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
           value={lang}
