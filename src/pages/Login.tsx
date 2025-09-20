@@ -4,7 +4,7 @@ function Login() {
 
 
   return (
-    <div className="bg-light">
+    <div className="login-container">
         <LoginCard />
     </div>
   )
