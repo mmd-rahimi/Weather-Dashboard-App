@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import ThemeToggle from "./ThemeToggle";
 import { ColorModeContext } from "../contexts/ColorModeContext";
+import { NavLink } from "react-router";
 
 export default function LoginPage() {
   const [name, setName] = useState<string>("");
@@ -142,10 +143,11 @@ export default function LoginPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-
-            <Button fullWidth variant="contained" sx={{ mt: 14 }}>
-              {texts[lang].button}
-            </Button>
+            <NavLink to={"/dashboard"}>
+              <Button fullWidth variant="contained" sx={{ mt: 14 }}>
+                {texts[lang].button}
+              </Button>
+            </NavLink>
           </CardContent>
         </Card>
       </Box>
