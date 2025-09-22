@@ -10,8 +10,8 @@ function ThemeToggle() {
     const colorMode = useContext(ColorModeContext)
 
   return (
-    <IconButton onClick={colorMode.toggleColorMode} color="inherit">
-        {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
+    <IconButton size="large" onClick={colorMode.toggleColorMode} color="inherit">
+        {theme.palette.mode === "dark" ? <Brightness7 fontSize="large" /> : <Brightness4 fontSize="large" />}
     </IconButton>
   )
 }

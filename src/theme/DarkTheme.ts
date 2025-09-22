@@ -4,7 +4,7 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#3B82F6', // آبی روشن‌تر برای تم تیره
+      main: '#3B82F6',
       light: '#60A5FA',
       dark: '#2563EB',
     },
@@ -14,12 +14,12 @@ export const darkTheme = createTheme({
       dark: '#64748B',
     },
     background: {
-      default: '#151D32', // پس‌زمینه تیره اصلی
-      paper: '#292F45', // کارت‌ها و سطوح تیره
+      default: '#151D32',
+      paper: '#292F45',
     },
     text: {
-      primary: '#F1F5F9', // متن سفید روشن
-      secondary: '#CBD5E1', // متن خاکستری روشن
+      primary: '#F1F5F9',
+      secondary: '#CBD5E1',
     },
   },
   direction: 'rtl',

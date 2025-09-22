@@ -6,38 +6,17 @@ import {
   TextField,
   Button,
   Box,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
 } from "@mui/material";
 import ThemeToggle from "./ThemeToggle";
 import { ColorModeContext } from "../contexts/ColorModeContext";
 import { NavLink } from "react-router";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 export default function LoginPage() {
   const [name, setName] = useState<string>("");
-  const [lang, setLang] = useState<"fa" | "en">("fa");
-
   const { currentMode } = useContext(ColorModeContext);
-
-  const texts: Record<
-    "fa" | "en",
-    { title: string; placeholder: string; button: string; langLabel: string }
-  > = {
-    fa: {
-      title: "ورود",
-      placeholder: "نام خود را وارد کنید",
-      button: "ورود",
-      langLabel: "زبان",
-    },
-    en: {
-      title: "Login",
-      placeholder: "Enter your name",
-      button: "Login",
-      langLabel: "Language",
-    },
-  };
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -132,20 +111,20 @@ export default function LoginPage() {
               fontWeight="bold"
               fontSize={25}
             >
-              {texts[lang].title}
+              {t("login.title")}
             </Typography>
 
             <TextField
               size="small"
               fullWidth
               margin="normal"
-              label={texts[lang].placeholder}
+              label={t("login.placeholder")}
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <NavLink to={"/dashboard"}>
               <Button fullWidth variant="contained" sx={{ mt: 14 }}>
-                {texts[lang].button}
+                {t("login.button")}
               </Button>
             </NavLink>
           </CardContent>
@@ -158,32 +137,11 @@ export default function LoginPage() {
           display: "flex",
           flexDirection: "row",
           gap: { xs: 2, sm: 4, md: 8 },
+          direction: "rtl",
         }}
       >
-        <FormControl
-          variant="standard"
-          sx={{
-            width: 200,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <InputLabel id="demo-simple-select-standard-label">
-            Language
-          </InputLabel>
-          <Select
-            sx={{ width: "100%" }}
-            labelId="demo-simple-select-standard-label"
-            id="demo-simple-select-standard"
-            value={lang}
-            onChange={(e) => setLang(e.target.value)}
-            label="Language"
-          >
-            <MenuItem value="fa">فارسی</MenuItem>
-            <MenuItem value="en">English</MenuItem>
-          </Select>
-        </FormControl>
+        {/* select lang */}
+        <LanguageSwitcher />
         {/* theme toggle */}
         <ThemeToggle />
       </Box>

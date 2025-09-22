@@ -4,22 +4,22 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#2563EB', // آبی اصلی - از دکمه‌ها و هایلایت‌ها
+      main: '#2563EB',
       light: '#3B82F6',
       dark: '#1D4ED8',
     },
     secondary: {
-      main: '#64748B', // خاکستری برای متن‌های ثانویه
+      main: '#64748B',
       light: '#94A3B8',
       dark: '#475569',
     },
     background: {
-      default: '#F3FAFE', // پس‌زمینه اصلی
-      paper: '#FFFFFF', // کارت‌ها و سطوح
+      default: '#F3FAFE',
+      paper: '#FFFFFF',
     },
     text: {
-      primary: '#0F172A', // متن اصلی
-      secondary: '#475569', // متن ثانویه
+      primary: '#0F172A',
+      secondary: '#475569',
     },
   },
   direction: 'rtl',
