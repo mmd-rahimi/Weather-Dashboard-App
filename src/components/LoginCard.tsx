@@ -10,7 +10,6 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  useTheme,
 } from "@mui/material";
 import ThemeToggle from "./ThemeToggle";
 import { ColorModeContext } from "../contexts/ColorModeContext";
@@ -19,9 +18,7 @@ export default function LoginPage() {
   const [name, setName] = useState<string>("");
   const [lang, setLang] = useState<"fa" | "en">("fa");
 
-  const {currentMode} = useContext(ColorModeContext)
-    const theme = useTheme();
-
+  const { currentMode } = useContext(ColorModeContext);
 
   const texts: Record<
     "fa" | "en",
@@ -58,7 +55,7 @@ export default function LoginPage() {
             sm: 420,
             md: 700,
           },
-          height: {xs:400, sm:400},
+          height: { xs: 400, sm: 400 },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -67,7 +64,7 @@ export default function LoginPage() {
             sm: "row-reverse",
           },
           mb: 3,
-        borderRadius: 4,
+          borderRadius: 4,
         }}
       >
         {/* login form hero */}
@@ -121,9 +118,9 @@ export default function LoginPage() {
         {/* login form */}
         <Card
           sx={{
-            width: {xs: "100%", sm:"55%"},
-            height:"100%" ,
-             px: 4,
+            width: { xs: "100%", sm: "55%" },
+            height: "100%",
+            px: 4,
           }}
         >
           <CardContent sx={{ mt: 6 }}>
@@ -138,7 +135,7 @@ export default function LoginPage() {
             </Typography>
 
             <TextField
-            size="small"
+              size="small"
               fullWidth
               margin="normal"
               label={texts[lang].placeholder}
@@ -154,31 +151,39 @@ export default function LoginPage() {
       </Box>
 
       {/* select lang & theme toggle */}
-      <Box sx={{display: "flex", flexDirection:"row", gap:{xs:2, sm:4, md:8 }}}>
-      <FormControl
-        variant="standard"
+      <Box
         sx={{
-          width: 200,
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          flexDirection: "row",
+          gap: { xs: 2, sm: 4, md: 8 },
         }}
       >
-        <InputLabel id="demo-simple-select-standard-label">Language</InputLabel>
-        <Select
-        sx={{width: "100%"}}
-          labelId="demo-simple-select-standard-label"
-          id="demo-simple-select-standard"
-          value={lang}
-          onChange={(e) => setLang(e.target.value)}
-          label="Language"
+        <FormControl
+          variant="standard"
+          sx={{
+            width: 200,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          <MenuItem value="fa">فارسی</MenuItem>
-          <MenuItem value="en">English</MenuItem>
-        </Select>
-      </FormControl>
-      {/* theme toggle */}
-      <ThemeToggle />
+          <InputLabel id="demo-simple-select-standard-label">
+            Language
+          </InputLabel>
+          <Select
+            sx={{ width: "100%" }}
+            labelId="demo-simple-select-standard-label"
+            id="demo-simple-select-standard"
+            value={lang}
+            onChange={(e) => setLang(e.target.value)}
+            label="Language"
+          >
+            <MenuItem value="fa">فارسی</MenuItem>
+            <MenuItem value="en">English</MenuItem>
+          </Select>
+        </FormControl>
+        {/* theme toggle */}
+        <ThemeToggle />
       </Box>
     </Box>
   );
