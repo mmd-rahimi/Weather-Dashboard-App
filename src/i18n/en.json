@@ -1,0 +1,8 @@
+{
+  "login": {
+    "title": "Login",
+    "placeholder": "Enter your name",
+    "button": "Login",
+    "langLabel": "Language"
+  }
+}

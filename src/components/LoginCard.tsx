@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   Card,
   CardContent,
@@ -10,11 +10,18 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  useTheme,
 } from "@mui/material";
+import ThemeToggle from "./ThemeToggle";
+import { ColorModeContext } from "../contexts/ColorModeContext";
 
 export default function LoginPage() {
   const [name, setName] = useState<string>("");
   const [lang, setLang] = useState<"fa" | "en">("fa");
+
+  const {currentMode} = useContext(ColorModeContext)
+    const theme = useTheme();
+
 
   const texts: Record<
     "fa" | "en",
@@ -61,16 +68,14 @@ export default function LoginPage() {
           },
           mb: 3,
         borderRadius: 4,
-        // boxShadow:4, 
         }}
       >
         {/* login form hero */}
         <Card
-          className="second-light-color"
           sx={{
-            bgcolor: "#D3E1E7",
             width: "45%",
             height: "100%",
+            background: currentMode === "light" ? "#D3E1E7" : "#404961",
             display: { xs: "none", sm: "flex" },
             justifyItems: "center",
           }}
@@ -119,7 +124,6 @@ export default function LoginPage() {
             width: {xs: "100%", sm:"55%"},
             height:"100%" ,
              px: 4,
-            bgcolor: "#fff",
           }}
         >
           <CardContent sx={{ mt: 6 }}>
@@ -149,7 +153,8 @@ export default function LoginPage() {
         </Card>
       </Box>
 
-      {/* select lang */}
+      {/* select lang & theme toggle */}
+      <Box sx={{display: "flex", flexDirection:"row", gap:{xs:2, sm:4, md:8 }}}>
       <FormControl
         variant="standard"
         sx={{
@@ -172,6 +177,9 @@ export default function LoginPage() {
           <MenuItem value="en">English</MenuItem>
         </Select>
       </FormControl>
+      {/* theme toggle */}
+      <ThemeToggle />
+      </Box>
     </Box>
   );
 }
