@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-export default function LanguageSwitcher() {
+export default function LoginPageLanguageSwitcher() {
   const {t, i18n } = useTranslation();
 
 
