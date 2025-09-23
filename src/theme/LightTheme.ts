@@ -18,8 +18,8 @@ export const lightTheme = createTheme({
       paper: '#FFFFFF',
     },
     text: {
-      primary: '#0F172A',
-      secondary: '#475569',
+      primary: '#003464',
+      secondary: '#000',
     },
   },
   direction: 'rtl',
