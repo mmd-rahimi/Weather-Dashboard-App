@@ -11,9 +11,12 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import SettingButton from "./SettingButton";
+import { useTranslation } from "react-i18next";
 
 // Header Component
 export default function Header() {
+
+  const {t} = useTranslation()
   const [location, setLocation] = useState<string | null>("");
   const theme = useTheme();
 
@@ -38,7 +41,7 @@ export default function Header() {
             fontWeight={400}
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            Weather Dashboard
+            {t("dashboard.header.title")}
           </Typography>
           {/* Search bar & Setting Button */}
           <Box
@@ -46,21 +49,21 @@ export default function Header() {
             sx={{ display: "flex", flexDirection: "row", gap: 2 }}
           >
             {/* Search bar */}
-            <FormControl size="small" sx={{ minWidth: 200 }}>
+            <FormControl size="small" sx={{ minWidth: 230 }}>
               <InputLabel id="location-select-label">
-                Search Your Location
+                {t("dashboard.header.label")}
               </InputLabel>
               <Select
                 labelId="location-select-label"
                 id="location-select"
                 defaultValue=""
-                label="Search Your Location"
+                label={t("dashboard.header.label")}
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               >
-                <MenuItem value="San Francisco">San Francisco</MenuItem>
-                <MenuItem value="New York">New York</MenuItem>
-                <MenuItem value="Los Angeles">Los Angeles</MenuItem>
+                <MenuItem value="San Francisco">{t("dashboard.header.country1")}</MenuItem>
+                <MenuItem value="New York">{t("dashboard.header.country2")}</MenuItem>
+                <MenuItem value="Los Angeles">{t("dashboard.header.country3")}</MenuItem>
               </Select>
             </FormControl>
             {/* Setting Button */}

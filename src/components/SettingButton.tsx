@@ -49,7 +49,6 @@ export default function SettingButton() {
 
   return (
     <Box sx={{ flexGrow: 0 }}>
-      <Tooltip title="تنظیمات">
         <IconButton
           onClick={handleOpenSettingsMenu}
           sx={{
@@ -66,7 +65,6 @@ export default function SettingButton() {
         >
           <SettingsIcon sx={{ fontSize: 24, color: "grey.700" }} />
         </IconButton>
-      </Tooltip>
 
       <Menu
         sx={{ mt: "45px" }}
@@ -96,7 +94,7 @@ export default function SettingButton() {
           {/* Logout */}
           <MenuItem onClick={handleLogout} sx={{mt:1, px:0}}>
             <Typography fontSize={13} fontWeight={500} color={theme.palette.text.secondary}>
-                Exit
+                {t("dashboard.header.Exit")}
             </Typography>
           </MenuItem>
         </Box>

@@ -3,11 +3,13 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useContext, useState } from "react";
 import { ColorModeContext } from "../contexts/ColorModeContext";
+import { useTranslation } from "react-i18next";
 
 export default function DashboardPageThemeToggle() {
   const { currentMode, toggleColorMode } = useContext(ColorModeContext);
   const theme = useTheme();
   const [alignment, setAlignment] = useState("");
+  const {t} = useTranslation()
 
   const handleChange = (
     e: React.MouseEvent<HTMLElement>,
@@ -23,7 +25,7 @@ export default function DashboardPageThemeToggle() {
         fontWeight={500}
         color={theme.palette.text.secondary}
       >
-        Mode
+        {t("dashboard.header.Mode")}
       </Typography>
       <ToggleButtonGroup
         sx={{ height: 29 }}
@@ -44,7 +46,7 @@ export default function DashboardPageThemeToggle() {
           value="light"
           sx={{ textTransform: "none" }}
         >
-          Light
+          {t("dashboard.header.light")}
         </ToggleButton>
         <ToggleButton
           onClick={() => {
@@ -56,7 +58,7 @@ export default function DashboardPageThemeToggle() {
           value="dark"
           sx={{ textTransform: "none" }}
         >
-          Dark
+          {t("dashboard.header.dark")}
         </ToggleButton>
       </ToggleButtonGroup>
     </Box>

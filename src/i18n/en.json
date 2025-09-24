@@ -4,5 +4,21 @@
     "placeholder": "Enter your name",
     "button": "Login",
     "langLabel": "Language"
+  },
+    "dashboard": {
+      "header": {
+    "title": "Weather Dashboard",
+    "label": "Search Your Location",
+    "Mode": "Mode",
+    "Language": "Language",
+    "Exit": "Exit",
+    "light": "Light",
+    "dark": "Dark",
+    "fa": "Fa",
+    "en": "En",
+    "country1": "San Francisco",
+    "country2": "New York",
+    "country3": "Los Angeles"
+      }
   }
 }
