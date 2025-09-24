@@ -16,9 +16,9 @@
     "dark": "Dark",
     "fa": "Fa",
     "en": "En",
-    "country1": "San Francisco",
-    "country2": "New York",
-    "country3": "Los Angeles"
+    "city1": "San Francisco",
+    "city2": "New York",
+    "city3": "Los Angeles"
       }
   }
 }

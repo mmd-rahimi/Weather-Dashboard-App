@@ -1,5 +1,11 @@
 import { createTheme } from "@mui/material/styles";
 
+export interface CustomBackground {
+  default: string;
+  paper: string;
+  card: string;
+}
+
 export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -15,8 +21,9 @@ export const darkTheme = createTheme({
     },
     background: {
       default: '#151D32',
+      card: '#292F45',
       paper: '#292F45',
-    },
+    } as CustomBackground,
     text: {
       primary: '#F1F5F9',
       secondary: '#CBD5E1',

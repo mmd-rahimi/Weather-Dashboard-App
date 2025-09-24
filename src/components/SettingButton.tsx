@@ -2,13 +2,11 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Divider, useTheme } from "@mui/material";
-import { ColorModeContext } from "../contexts/ColorModeContext";
 import { useTranslation } from "react-i18next";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import DashboardPageLanguageSwitcher from "./DashboardPageLanguageSwitcher";
 import DashboardPageThemeToggle from "./DashboardPageThemeToggle";
@@ -16,8 +14,7 @@ import DashboardPageThemeToggle from "./DashboardPageThemeToggle";
 export default function SettingButton() {
   const theme = useTheme();
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
-  const { toggleColorMode, currentMode } = useContext(ColorModeContext);
+  const { t } = useTranslation();
 
   const [anchorElSettings, setAnchorElSettings] = useState<null | HTMLElement>(
     null
@@ -29,17 +26,6 @@ export default function SettingButton() {
 
   const handleCloseSettingsMenu = () => {
     setAnchorElSettings(null);
-  };
-
-  const handleThemeToggle = () => {
-    toggleColorMode();
-    handleCloseSettingsMenu();
-  };
-
-  const handleLanguageChange = () => {
-    const newLang = i18n.language === "fa" ? "en" : "fa";
-    i18n.changeLanguage(newLang);
-    handleCloseSettingsMenu();
   };
 
   const handleLogout = () => {

@@ -1,5 +1,11 @@
 import { createTheme } from '@mui/material/styles';
 
+interface CustomBackground {
+  default: string;
+  paper: string;
+  card: string;
+}
+
 export const lightTheme = createTheme({
   palette: {
     mode: 'light',
@@ -15,8 +21,9 @@ export const lightTheme = createTheme({
     },
     background: {
       default: '#F3FAFE',
+      card: '#E1E9EE',
       paper: '#FFFFFF',
-    },
+    } as CustomBackground,
     text: {
       primary: '#003464',
       secondary: '#000',
