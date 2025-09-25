@@ -8,8 +8,7 @@ import {
 import { useTranslation } from "react-i18next";
 
 export default function LoginPageLanguageSwitcher() {
-  const {t, i18n } = useTranslation();
-
+  const { t, i18n } = useTranslation();
 
   const handleChange = (e: SelectChangeEvent) => {
     const lng = e.target.value;
@@ -27,9 +26,11 @@ export default function LoginPageLanguageSwitcher() {
         alignItems: "center",
       }}
     >
-      <InputLabel id="demo-simple-select-standard-label">{t("login.langLabel")}</InputLabel>
+      <InputLabel id="demo-simple-select-standard-label">
+        {t("login.langLabel")}
+      </InputLabel>
       <Select
-      sx={{width: "100%"}}
+        sx={{ width: "100%" }}
         value={i18n.language || "en"}
         onChange={handleChange}
       >

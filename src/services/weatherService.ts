@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { weatherConfig } from '../config/weatherConfig';
+import axios from "axios";
+import { weatherConfig } from "../config/weatherConfig";
 
 const { apiKey, baseUrl } = weatherConfig;
 
@@ -9,11 +9,11 @@ export const weatherService = {
       params: {
         q: city,
         appid: apiKey,
-        units: 'metric',
-        lang: 'en'
-      }
+        units: "metric",
+        lang: "en",
+      },
     });
-    
+
     return response.data;
-  }
+  },
 };

@@ -15,8 +15,7 @@ import { useTranslation } from "react-i18next";
 
 // Header Component
 export default function Header() {
-
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   const [location, setLocation] = useState<string | null>("");
   const theme = useTheme();
 
@@ -61,9 +60,15 @@ export default function Header() {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               >
-                <MenuItem value="San Francisco">{t("dashboard.header.San Francisco")}</MenuItem>
-                <MenuItem value="New York">{t("dashboard.header.city2")}</MenuItem>
-                <MenuItem value="Los Angeles">{t("dashboard.header.city3")}</MenuItem>
+                <MenuItem value="San Francisco">
+                  {t("dashboard.header.San Francisco")}
+                </MenuItem>
+                <MenuItem value="New York">
+                  {t("dashboard.header.city2")}
+                </MenuItem>
+                <MenuItem value="Los Angeles">
+                  {t("dashboard.header.city3")}
+                </MenuItem>
               </Select>
             </FormControl>
             {/* Setting Button */}

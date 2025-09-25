@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import type { CustomBackground } from "../../../theme/DarkTheme";
+import { useTranslation } from "react-i18next";
 
 const data = [
   { month: "Jan", temp: 12 },
@@ -27,6 +28,7 @@ const data = [
 
 export default function AvgMonthlyTempCard() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const primary = theme.palette.primary.main ?? "#5b6af6";
 
   return (
@@ -41,15 +43,27 @@ export default function AvgMonthlyTempCard() {
       <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
         <Typography
           variant="subtitle1"
-          sx={{ fontWeight: 700, mb: 1, color: theme.palette.text.primary, fontSize:{xs:18, md:25} }}
+          sx={{
+            fontWeight: 700,
+            mb: 1,
+            color: theme.palette.text.primary,
+            fontSize: { xs: 18, md: 25 },
+          }}
         >
-          Average Monthly Temperature
+          {t("dashboard.body.Average Monthly Temprature")}
         </Typography>
 
         <div style={{ width: "100%", height: 160 }}>
           <ResponsiveContainer>
-            <LineChart data={data} margin={{ top: 8, right: 12, left: 0, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e6eef6" />
+            <LineChart
+              data={data}
+              margin={{ top: 8, right: 12, left: 0, bottom: 0 }}
+            >
+              <CartesianGrid
+                strokeDasharray="3 3"
+                vertical={false}
+                stroke="#e6eef6"
+              />
               <XAxis
                 dataKey="month"
                 axisLine={false}

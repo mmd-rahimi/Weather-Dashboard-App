@@ -9,7 +9,7 @@ export default function DashboardPageThemeToggle() {
   const { currentMode, toggleColorMode } = useContext(ColorModeContext);
   const theme = useTheme();
   const [alignment, setAlignment] = useState("");
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   const handleChange = (
     e: React.MouseEvent<HTMLElement>,

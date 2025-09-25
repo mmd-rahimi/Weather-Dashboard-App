@@ -33,7 +33,7 @@ function DetailsWidget() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const theme = useTheme();
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -51,10 +51,21 @@ function DetailsWidget() {
     fetchWeather();
   }, []);
 
+  const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
+
   if (loading) {
     return (
-      <Card sx={{ bgcolor: (theme.palette.background as CustomBackground).card }}>
-        <CardContent sx={{ height: 150, display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <Card
+        sx={{ bgcolor: (theme.palette.background as CustomBackground).card }}
+      >
+        <CardContent
+          sx={{
+            height: 150,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Typography>Loading weather...</Typography>
         </CardContent>
       </Card>
@@ -63,16 +74,31 @@ function DetailsWidget() {
 
   if (!weatherData) {
     return (
-      <Card sx={{ bgcolor: (theme.palette.background as CustomBackground).card }}>
-        <CardContent sx={{ height: 150, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <Typography>{t("dashboard.body.AverageMonthlyTemprature")}</Typography>
+      <Card
+        sx={{ bgcolor: (theme.palette.background as CustomBackground).card }}
+      >
+        <CardContent
+          sx={{
+            height: 150,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography>Fail to load data</Typography>
         </CardContent>
       </Card>
     );
   }
 
   return (
-    <Card sx={{ bgcolor: (theme.palette.background as CustomBackground).card,width:{xs:"100%", md:600}, borderRadius:2}}>
+    <Card
+      sx={{
+        bgcolor: (theme.palette.background as CustomBackground).card,
+        width: { xs: "100%", md: 600 },
+        borderRadius: 2,
+      }}
+    >
       <CardContent
         sx={{
           display: "flex",
@@ -86,22 +112,22 @@ function DetailsWidget() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: {xs:2, md:4},
+            gap: { xs: 2, md: 4 },
             alignItems: "start",
           }}
         >
-          <Typography fontSize={{xs:20, md:25}} fontWeight={600}>
+          <Typography fontSize={{ xs: 20, md: 25 }} fontWeight={600}>
             {t(`dashboard.header.${weatherData.name}`)}
           </Typography>
-          <Typography fontSize={{xs:20, md:25}} fontWeight={600}>
-            {new Date().toLocaleDateString('en-US', { weekday: 'long' })}
+          <Typography fontSize={{ xs: 20, md: 25 }} fontWeight={600}>
+            {t(`dashboard.body.${today}`)}
           </Typography>
-          <Typography fontSize={{xs:20, md:25}} fontWeight={600}>
+          <Typography fontSize={{ xs: 20, md: 25 }} fontWeight={600}>
             {Math.round(weatherData.main.temp)}°C
           </Typography>
         </Box>
-        <Box fontSize={{xs:30, md:35}} fontWeight={800}>
-          {weatherData.weather[0]?.main || "Cloudy"}
+        <Box fontSize={{ xs: 30, md: 35 }} fontWeight={800}>
+          {weatherData.weather[0]?.main}
         </Box>
       </CardContent>
     </Card>

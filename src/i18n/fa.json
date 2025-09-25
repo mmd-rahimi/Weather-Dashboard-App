@@ -26,10 +26,11 @@
           "Tuesday": "سه شنبه",
           "Wednesday": "چهارشنبه",
           "Thursday": "پنجشنبه",
-          "Friday": "حمعه",
+          "Friday": "جمعه",
           "Saturday": "شنبه",
           "Weekly": "هفتگی",
-          "AverageMonthlyTemprature": "میانگین دمای ماهانه"
+          "Today": "امروز",
+          "Average Monthly Temprature": "میانگین دمای ماهانه"
       }
   }
 }

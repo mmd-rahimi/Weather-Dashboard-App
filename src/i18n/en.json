@@ -28,8 +28,9 @@
           "Thursday": "Thursday",
           "Friday": "Friday",
           "Saturday": "Saturday",
+          "Today": "Today",
           "Weekly": "Weekly",
-          "AverageMonthlyTemprature": "Average Monthly Temprature"
+          "Average Monthly Temprature": "Average Monthly Temprature"
       }
   }
 }
