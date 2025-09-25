@@ -16,9 +16,20 @@
     "dark": "Dark",
     "fa": "Fa",
     "en": "En",
-    "city1": "San Francisco",
+    "San Francisco": "San Francisco",
     "city2": "New York",
     "city3": "Los Angeles"
+      },
+      "body": {
+          "Sunday": "Sunday",
+          "Monday": "Monday",
+          "Tuesday": "Tuesday",
+          "Wednesday": "Wednesday",
+          "Thursday": "Thursday",
+          "Friday": "Friday",
+          "Saturday": "Saturday",
+          "Weekly": "Weekly",
+          "AverageMonthlyTemprature": "Average Monthly Temprature"
       }
   }
 }

@@ -16,9 +16,20 @@
     "dark": "شب",
         "fa": "فارسی",
     "en": "انگلیسی",
-    "city1": "سنفرنسیسکو",
+    "San Francisco": "سنفرنسیسکو",
     "city2": "نیو یورک",
     "city3": "لوس آنجلس"
+      },
+      "body": {
+          "Sunday": "یکشنبه",
+          "Monday": "دوشنبه",
+          "Tuesday": "سه شنبه",
+          "Wednesday": "چهارشنبه",
+          "Thursday": "پنجشنبه",
+          "Friday": "حمعه",
+          "Saturday": "شنبه",
+          "Weekly": "هفتگی",
+          "AverageMonthlyTemprature": "میانگین دمای ماهانه"
       }
   }
 }

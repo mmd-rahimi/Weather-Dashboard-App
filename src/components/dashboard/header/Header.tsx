@@ -61,7 +61,7 @@ export default function Header() {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               >
-                <MenuItem value="San Francisco">{t("dashboard.header.city1")}</MenuItem>
+                <MenuItem value="San Francisco">{t("dashboard.header.San Francisco")}</MenuItem>
                 <MenuItem value="New York">{t("dashboard.header.city2")}</MenuItem>
                 <MenuItem value="Los Angeles">{t("dashboard.header.city3")}</MenuItem>
               </Select>

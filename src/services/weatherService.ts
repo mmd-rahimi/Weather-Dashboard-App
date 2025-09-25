@@ -10,7 +10,7 @@ export const weatherService = {
         q: city,
         appid: apiKey,
         units: 'metric',
-        lang: 'fa'
+        lang: 'en'
       }
     });
     

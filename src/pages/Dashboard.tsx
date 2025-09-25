@@ -1,5 +1,5 @@
 import WeatherWidgets from "../components/dashboard/widgets/WeatherWidgets"
-import Header from "../components/Header"
+import Header from "../components/dashboard/header/Header"
 
 function Dashboard() {
 

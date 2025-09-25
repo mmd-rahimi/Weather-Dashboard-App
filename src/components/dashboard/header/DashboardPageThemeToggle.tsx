@@ -2,8 +2,8 @@ import { Box, Typography, useTheme } from "@mui/material";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useContext, useState } from "react";
-import { ColorModeContext } from "../contexts/ColorModeContext";
 import { useTranslation } from "react-i18next";
+import { ColorModeContext } from "../../../contexts/ColorModeContext";
 
 export default function DashboardPageThemeToggle() {
   const { currentMode, toggleColorMode } = useContext(ColorModeContext);

@@ -7,11 +7,11 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import ThemeToggle from "./LoginPageThemeToggle";
-import { ColorModeContext } from "../contexts/ColorModeContext";
+import { ColorModeContext } from "../../contexts/ColorModeContext";
 import { NavLink } from "react-router";
 import LanguageSwitcher from "./LoginPageLanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import LoginPageThemeToggle from "./LoginPageThemeToggle";
 
 export default function LoginPage() {
   const [name, setName] = useState<string>("");
@@ -143,7 +143,7 @@ export default function LoginPage() {
         {/* select lang */}
         <LanguageSwitcher />
         {/* theme toggle */}
-        <ThemeToggle />
+        <LoginPageThemeToggle />
       </Box>
     </Box>
   );
